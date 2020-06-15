@@ -1,0 +1,1 @@
+socket.on('newuser', (data) => console.log(`${data.user} has connected!`))

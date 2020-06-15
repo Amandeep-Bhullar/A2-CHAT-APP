@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: cornflowerblue;
+}
+
+.message-container{
+    padding: 2em;
+    background-color: pink;
+}
+.send-container{
+    margin-top: 33%;
+    text-align: center;
+     
+}
+.message-input{
+    padding: 1em;
+    min-width: 22em;
+    max-width: auto;
+    min-height: 2em;
+    max-height: auto;
+    text-align: center;
+}
+button{
+    background-color:pink;
+    padding: 1em;
+}
