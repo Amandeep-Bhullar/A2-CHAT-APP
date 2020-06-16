@@ -1,15 +1,22 @@
+:root{
+    --blue: #738FD1;
+    --pink: #C798C1;
+    --semilight: #dfe1e5;
+    --grey: #afafaf;
+    --light-grey: #e1e4e6;
+}
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 body{
-    background-color: cornflowerblue;
+    background-color: var(--blue);
 }
 
 .message-container{
     padding: 2em;
-    background-color: pink;
+    background-color: var(--pink);
 }
 .send-container{
     margin-top: 33%;
@@ -25,6 +32,28 @@ body{
     text-align: center;
 }
 button{
-    background-color:pink;
+    background-color:var(--pink);
     padding: 1em;
+}
+.right-msg{
+    text-align: right;
+    font-weight: bold;
+}
+.center-msg{
+    text-align: center;
+}
+.left-msg{
+    font-weight: bold;  
+    
+}
+.message{
+    color: var(--blue);
+    /* color: cornflowerblue; */
+    font-style: Bellota;
+
+}
+.time{
+    font-weight: 100; 
+    opacity: 0.1%;
+    color: var(--grey);
 }
