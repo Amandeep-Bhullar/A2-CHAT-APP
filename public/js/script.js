@@ -10,12 +10,12 @@ appendMessage('You joined')
 socket.emit('new-user', name)
 
 // msg sent from server is catched here
-socket.on('chat-message', data=>{
+socket.on('chat-message', message=>{
     // Now msg is appended on container by calling appendMessage method
-    const innerObj = JSON.parse(data.message);
-    const msg = innerObj.message;
-    const time = innerObj.time;
-    appendMessage(`${data.name}: ${msg}`, time)
+    const msg = message.message;
+    const time = message.time;
+    const username = message.name === name ? "You" : message.name;
+    appendMessage(`${username}: ${msg}`, time)
 })
 
 socket.on('user-connected',name =>{
@@ -50,16 +50,20 @@ function appendMessage(message, time = null){
     }
     else if(message.startsWith("You:")){
         messageContainer.innerHTML += `
-        <div class="right-msg">
-            <span class="message">${message}</span>
-            <span class="time">${time}</span>
+        <div class="right-msg ">
+            <div class="right-message-container">
+                <span class="message">${message}</span>
+                <span class="time">${time}</span>
+            </div>
         </div>`
     }
     else{
         messageContainer.innerHTML += `
         <div class="left-msg"> 
-            <span>${message}</span>
-            <span class="time">${time}</span>
+            <div class="left-message-container">
+                <span>${message}</span>
+                <span class="time">${time}</span>
+            </div>
         </div>`
     }
 }

@@ -2,7 +2,7 @@
     --blue: #738FD1;
     --pink: #C798C1;
     --semilight: #dfe1e5;
-    --grey: #afafaf;
+    --grey: #444141;
     --light-grey: #e1e4e6;
 }
 *{
@@ -15,6 +15,7 @@ body{
 }
 
 .message-container{
+    display: grid;
     padding: 2em;
     background-color: var(--pink);
 }
@@ -36,6 +37,7 @@ button{
     padding: 1em;
 }
 .right-msg{
+
     text-align: right;
     font-weight: bold;
 }
@@ -53,7 +55,22 @@ button{
 
 }
 .time{
-    font-weight: 100; 
-    opacity: 0.1%;
+    font-weight: 100;
+    font-size: 0.5em; 
+    opacity: 0.5;
     color: var(--grey);
+}
+.right-message-container{
+    display: inline-block;
+    background-color: yellow;
+    border-radius: 1em;
+    margin: 0.5em;
+    padding: 0.5em;
+}
+.left-message-container{
+    display: inline-block;
+    background-color:lightgreen;
+    border-radius: 1em;
+    margin: 0.5em;
+    padding: 0.5em;
 }
