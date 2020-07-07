@@ -1,15 +1,12 @@
 //heroku
 const PORT= process.env.PORT || 5000;
 //import express and assigned to variable
-const express = require('express')
+const app = require('express')();
 //import socket.io,which will run on port 3000 and assigned to variable
-const http = require('http')
+const http = require('http').createServer(app)
 
 const io = require('socket.io')(http);
-//Create Express APP Object()
-const app = express();
 
-let Server= http.Server(app);
 const users={}
 
 const messages=[];
@@ -54,7 +51,7 @@ app.get("/", (req, res) => {
     console.log("server is up");
 })
 
-Server.listen(PORT, function(){
+http.listen(PORT, function(){
     console.log("Chat server running via heroku");
 })
 
